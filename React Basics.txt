@@ -1,0 +1,49 @@
+React Basics:
+
+
+For React 18:::::
+
+New way of importing ReactDOM---
+import ReactDOM from "react-dom/client"
+
+ReactDOM.render(navbar, document.getElementById("root"))----
+is replaced by the below--
+ReactDOM.createRoot(document.getElementById("root")).render(navbar)
+OR
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(navbar)
+
+** If we use .append method to add the jsx page to our root div by document.getElementById("root").append((page)) then we get [object, Object] as the output becoz .append returns the js object as the output
+** If we rather use document.getElementById("root").append(JSON.stringify(page)) the we would get the js objects with their values
+
+This happens because when we use .append() method then the browser doesn't recognize it anything as important as DOM elements but when we use .render() method then the browser recognize it as the DOM elements and 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Why do we need to `import React from "react"` in our files?
+React is what defines JSX
+
+2. If I were to console.log(page) in index.js, what would show up?
+A JavaScript object. React elements that describe what React should
+eventually add to the real DOM for us.
+
+3. What's wrong with this code:
+```
+const page = (
+    <h1>Hello</h1>
+    <p>This is my website!</p>
+)
+```
+We need our JSX to be nested under a single parent element
+
+4. What does it mean for something to be "declarative" instead of "imperative"?
+Declarative means I can tell the computer WHAT to do 
+and expect it to handle the details. Imperative means I need
+to tell it HOW to do each step.
+
+5. What does it mean for something to be "composable"?
+We have small pieces that we can put together to make something
+larger/greater than the individual pieces.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
